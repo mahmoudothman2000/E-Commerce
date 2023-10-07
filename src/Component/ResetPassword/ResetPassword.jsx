@@ -3,10 +3,13 @@ import { useFormik } from 'formik';
 import React from 'react'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../Context/UserContext';
+import { useContext } from 'react';
 
 export default function ResetPassword() {
 
   let navigate = useNavigate();
+  let {setUserToken}= useContext(UserContext);
 
 
 async function resetPassword(values){
@@ -20,15 +23,11 @@ async function resetPassword(values){
         // console.log('success Token');
         toast.success('Reset Password successfully')
         localStorage.setItem("userToken" , response.data?.token );
-        navigate('/')
-        // console.log(response);
-        // console.log(response.data?.token);
+        navigate('/login')
       }
     })
     .catch(function (error){
       if(error.response?.data.statusMsg === 'fail'){
-          // console.log(error);
-          // console.log(error.response?.data.message);
           toast.error(error.response?.data.message);
       }
     });
