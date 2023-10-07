@@ -28,16 +28,6 @@ export default function CashPayment() {
         localStorage.removeItem("numCartItem");
         setNumItems(null)
         navigate('/paymentDetails')
-                    // console.log(response);
-                    // console.log(response.data.status);
-                    // console.log(response.data.data.paymentMethodType);
-                    // console.log(response.data.data.totalOrderPrice);
-                    // console.log(response.data.data.cartItems.length);
-                    // console.log('===================================');
-                    // console.log(response.data.data.shippingAddress.city);
-                    // console.log(response.data.data.shippingAddress.phone);
-                    // console.log(response.data.data.shippingAddress.details);
-
       }
     })
     .catch(function(error){

@@ -40,7 +40,8 @@ import PaymentDetails from './Component/PaymentDetails/PaymentDetails';
 // let routers = createHashRouter([
 
 
-let routers = createBrowserRouter([
+// let routers = createBrowserRouter([
+let routers = createHashRouter([
   {path: '/' , element: <Layout></Layout>,children:[
     {index:true ,element:<ProtectedRoute> <Home/> </ProtectedRoute> },
     {path:'cart' ,element:<ProtectedRoute> <Cart/> </ProtectedRoute> },
